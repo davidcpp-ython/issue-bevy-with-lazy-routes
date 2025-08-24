@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 use leptos_meta::*;
-use leptos_router::{components::{Router, Routes, Route}, path};
+use leptos_router::{components::{Router, Routes, Route}, path, Lazy};
 
 pub mod components;
 pub mod pages;
@@ -35,7 +35,7 @@ pub fn App() -> impl IntoView {
     view! {
         <Router>
             <Routes fallback=|| "404 - Page not found">
-                <Route path=path!("/") view=pages::home::HomePage/>
+                <Route path=path!("/") view={Lazy::<pages::home::HomePage>::new()}/>
                 <Route path=path!("/about") view=pages::about::AboutPage/>
             </Routes>
         </Router>
