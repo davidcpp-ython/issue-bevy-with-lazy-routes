@@ -2,6 +2,7 @@
 /target/
 /site/
 /pkg/
+/build/
 Cargo.lock
 
 # IDE
